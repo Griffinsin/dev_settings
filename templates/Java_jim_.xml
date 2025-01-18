@@ -1,0 +1,246 @@
+<templateSet group="Java(jim)">
+  <template name="arraytoset" value="import java.util.Collections;&#10;import java.util.HashSet;&#10;import java.util.Set;&#10;public static &lt;T&gt; Set&lt;T&gt; arrayToSet(T... array) {&#10;    Set&lt;T&gt; result = new HashSet&lt;T&gt;();&#10;    Collections.addAll(result, array);&#10;    return result;&#10;}" description="数组转集合" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="inttostring" value="String.valueOf($int$);&#10;String $s$ = Integer.toString($100$);" description="int转string" toReformat="false" toShortenFQNames="true">
+    <variable name="int" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="s" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="100" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="stringtoint" value="Integer.parseInt($str$);" description="string转int" toReformat="false" toShortenFQNames="true">
+    <variable name="str" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="stringtodate" value="String string = &quot;January 2, 2010&quot;;&#10;DateFormat format = new SimpleDateFormat(&quot;MMMM d, yyyy&quot;, Locale.ENGLISH);&#10;Date date = format.parse(string);&#10;System.out.println(date);" description="字符串转Data" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="methodname" value="String methodName = Thread.currentThread().getStackTrace()[1].getMethodName();&#10;System.out.println(methodName);" description="获取当前方法的名称" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="shared" value="enum Singleton {&#10;    shared;&#10;    public void doSomething() {&#10;    }&#10;}" description="单例写法" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="find" value="// 在Java中查找对象数组中元素索引的通用方法&#10;public static&lt;T&gt; int find(T[] a, T target) {&#10;    return Arrays.asList(a).indexOf(target);&#10;}" description="查找元素" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="classtemplate" value="class Person {&#10;    String name;&#10;    int age;&#10;    public Person(String name, int age) {&#10;        this.name = name;&#10;        this.age = age;&#10;    }&#10;}" description="类创建模板" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="reverseArray" value="//反转数组&#10;static void reverseArray(Object array) {&#10;    Class cl = array.getClass();&#10;    if (!cl.isArray()) return;&#10;    int length = Array.getLength(array);&#10;&#10;    int start = 0;&#10;    int end = length - 1;&#10;    while (start &lt; end) {&#10;        Object tempStart = Array.get(array, start);&#10;        Object tempEnd = Array.get(array, end);&#10;        Array.set(array, start, tempEnd);&#10;        Array.set(array, end, tempStart);&#10;        start++;&#10;        end--;&#10;    }&#10;}" description="数组反转" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="abstractclass" value="abstract class Person {&#10;    public abstract void run();&#10;}&#10;&#10;class Student extends Person {&#10;    @Override&#10;    public void run() {&#10;        System.out.println(&quot;Student.run&quot;);&#10;    }&#10;}" description="抽象类模板示例" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="interface示例" value="// interface 示例，比抽象类还要抽象的纯抽象接口，因为它连字段都不能有。&#10;// 因为接口定义的所有方法默认都是public abstract的，所以这两个修饰符不需要写出来（写不写效果都一样）&#10;interface Person {&#10;    // 所有属性为类属性 编译器会自动加上public statc final:&#10;    int MALE = 1;&#10;    int FEMALE = 2;&#10;    void run();&#10;&#10;    String getName();&#10;}&#10;&#10;class Student implements Person {&#10;    private String name;&#10;&#10;    public Student(String name) {&#10;        this.name = name;&#10;    }&#10;&#10;    @Override&#10;    public void run() {&#10;        System.out.println(this.name + &quot; run&quot;);&#10;    }&#10;&#10;    @Override&#10;    public String getName() {&#10;        return this.name;&#10;    }&#10;}" description="interface写法" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="stringjoin" value="String[] arr = {&quot;A&quot;, &quot;B&quot;, &quot;C&quot;};// &quot;A***B***C&quot;&#10;String s = String.join(&quot;***&quot;, arr);&#10;&#10;String[] names = {&quot;Bob&quot;, &quot;Alice&quot;, &quot;Grace&quot;};&#10;var sj = new StringJoiner(&quot;, &quot;, &quot;Hello &quot;, &quot;!&quot;);&#10;for (String name : names) {&#10;    sj.add(name);&#10;}&#10;String s = sj.toString();" description="字符串拼接" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="stringformate" value="String s = &quot;string %s, int %d ,十六进制 %x, 浮点 %f!&quot;;&#10;String s1 = s.formatted(&quot;Alice&quot;, 80, 2550, 3.14);&#10;String s2 = String.format(&quot;Hi %s, your score is %.2f!&quot;, &quot;Bob&quot;, 59.5);" description="格式化字符串" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="stringtochar" value="char[] cs = &quot;String&quot;.toCharArray();" description="string转char" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="chartostring" value="String s = new String(new char[]{'s', 't', 'r'});" description="char转string" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="stringbuffer" value="String str = &quot;start&quot;;&#10;//线程安全&#10;StringBuffer buffer = new StringBuffer(str);&#10;for (int i = 0; i &lt; 20; i += 1) {&#10;    buffer.append(i).append(',');&#10;}&#10;str = buffer.toString();&#10;" description="StringBuffer示例" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="arraytostring" value="String s = Arrays.toString($list$);" description="数组转字符串方便打印" toReformat="false" toShortenFQNames="true">
+    <variable name="list" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="numtostring" value="Color.red.name()" description="获取枚举的字面字符串" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="enumtoint" value="Color.red.ordinal()" description="枚举转int" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="inttoenum" value="Color c = Color.values()[0];" description="int转枚举" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="map用法" value="//注意toArray()得到的数组的元素一定是object的，所以基础类型都要使用Object版本&#10;//生成新的数组&#10;List&lt;Integer&gt; ages = Arrays.stream(list)&#10;        .map(Person::getAge).toList();&#10;//每个执行方法&#10;Arrays.stream(list)&#10;        .map(e -&gt; e.getAge())&#10;        .forEach(e -&gt; System.out.println(e));&#10;//过滤&#10;List&lt;Person&gt; p = Arrays.stream(list).filter(e -&gt; e.getAge() &lt; 4).toList();&#10;//排序 使用实例的某个属性&#10;List&lt;Person&gt; p1 = Arrays.stream(list).sorted(Comparator.comparing(Person::getAge)).toList();&#10;//排序再反转&#10;List&lt;Person&gt; p2 = Arrays.stream(list).sorted(Comparator.comparing(Person::getAge).reversed()).toList();&#10;" description="map用法提示" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="fe" value="for ($String$ element: $array$){&#10;    $dosomthing$&#10;}&#10;//java8的函数式foreach中return 等效 传统的for中continue" description="forEach循环" toReformat="false" toShortenFQNames="true">
+    <variable name="String" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="array" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="dosomthing" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="random" value="SecureRandom sr = null;&#10;try {&#10;    sr = SecureRandom.getInstanceStrong(); // 获取高强度安全随机数生成器&#10;} catch (NoSuchAlgorithmException e) {&#10;    sr = new SecureRandom(); // 获取普通的安全随机数生成器&#10;}&#10;SecureRandom sr = new SecureRandom();&#10;sr.nextInt();//完全随机int数&#10;sr.nextInt(10);//随机0&lt;=x&lt;10&#10;sr.nextInt(1, 10);//随机1&lt;=x&lt;10&#10;sr.nextFloat();//随机0&lt;=x&lt;1的小数" description="生成随机数" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="f" value="for (int $i$ = 0; $i$ &lt; $100$; $i$++) {&#10;    $dosomthing$&#10;}" description="fori循环" toReformat="false" toShortenFQNames="true">
+    <variable name="i" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="100" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="dosomthing" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="abs" value="Math.abs($100$);" description="取绝对值" toReformat="false" toShortenFQNames="true">
+    <variable name="100" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="max" value="Math.max($a$,$b$);" description="取较大值" toReformat="false" toShortenFQNames="true">
+    <variable name="a" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="b" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="list" value="List&lt;JCard&gt; result = new ArrayList&lt;&gt;();&#10;List&lt;Integer&gt; result = List.of(1,2,3);&#10;Integer[] array = new Integer[]{1, 2, 3,};&#10;List&lt;Integer&gt; result = List.of(array);" description="list初始化" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="srrandom" value="SecureRandom sr = new SecureRandom();" description="随机生成对象SecureRandom" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="comparable" value="class Person implements Comparable&lt;Person&gt; {&#10;    String name;&#10;    int age;&#10;&#10;    public Person(String name, int age) {&#10;        this.name = name;&#10;        this.age = age;&#10;    }&#10;&#10;    /*&#10;    Person[] ps = new Person[] {&#10;            new Person(&quot;Bob&quot;, 61),&#10;            new Person(&quot;Alice&quot;, 88),&#10;            new Person(&quot;Lily&quot;, 75),&#10;        };&#10;        Arrays.sort(ps);&#10;        System.out.println(Arrays.toString(ps));&#10;     */&#10;    @Override&#10;    public int compareTo(Person o) {&#10;        return this.name.compareTo(o.name);&#10;    }&#10;}" description="类实现comparable，从而支持排序" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="listtoarray" value="List&lt;Integer&gt; list = List.of(23, 44, 54, 66);&#10;//类型要相同，需要给定义一个空的array才能转；&#10;Integer[] a = list.toArray(new Integer[0]);" description="list转array" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="sortArray" value="//从小大排列数组&#10;Arrays.sort(ar);&#10;Arrays.sort(array, (e1, e2) -&gt; {&#10;    //从大到小排序&#10;    if (e1.age &lt; e2.age) return 1;&#10;    else if (e1.age &gt; e2.age) return -1;&#10;    else return 0;&#10;});" description="数组排序" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="comparefunc" value="public class Main {&#10;    public static void main(String[] args) {&#10;        String[] array = new String[] { &quot;Apple&quot;, &quot;Orange&quot;, &quot;Banana&quot;, &quot;Lemon&quot; };&#10;        Arrays.sort(array, Main::compareFuc);&#10;        System.out.println(String.join(&quot;, &quot;, array));&#10;    }&#10;    static int compareFuc(String s1, String s2) {&#10;        return s1.compareTo(s2);&#10;    }&#10;}" description="compare方法定义示例" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="foreachprintln" value=".forEach(System.out::println)&#10;.forEach(e-&gt;System.out.println(e.age))" description="在stream后面打印每一个" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="arraytolist" value="//如果是int 使用Integer数组才行&#10;Arrays.asList(nonColors);" description="array转list" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="listtoset" value="Set&lt;String&gt; set = aList.stream().collect(Collectors.toSet());" description="List转Set" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="randomList" value="List&lt;JCard&gt; randomOrderList = list.stream().collect(Collectors.toSet()).stream().toList()" description="将list打乱顺序" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="settolist" value="Set&lt;String&gt; set = new HashSet&lt;&gt;(list);&#10;set.stream().toList()" description="set转list" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="map" value="Map&lt;Integer, List&lt;JCard&gt;&gt; bluePointMap = new HashMap&lt;&gt;();&#10;bluePointMap.put(10, List.of(new JCard(0, 0, 0)));&#10;List&lt;JCard&gt; value = bluePointMap.getOrDefault(element.point, new ArrayList&lt;&gt;());" description="map创建和取值" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="sortlist" value="blueAllCards.sort((e1, e2) -&gt; {&#10;    //从小到大&#10;    if (e1.point &gt; e2.point) return 1;&#10;    if (e1.point &lt; e2.point) return -1;&#10;    //从大的到小&#10;    if (e1.point &lt; e2.point) return 1;&#10;    if (e1.point &gt; e2.point) return -1;&#10;    return 0;&#10;});" description="list做排序" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="mapforeach" value="$map$.forEach((k, v) -&gt; {&#10;    $doSomething$&#10;});" description="map遍历" toReformat="false" toShortenFQNames="true">
+    <variable name="map" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="doSomething" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="enumtostring" value="type.name()" description="打印枚举字面文字" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="soutintarray" value="System.out.println(Arrays.toString(cardIndexs));" description="打印int数组" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="newlist" value="List&lt;$JCard$&gt; $straightFlushArray$ = new ArrayList&lt;&gt;();" description="创建list遍历" toReformat="false" toShortenFQNames="true">
+    <variable name="JCard" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="straightFlushArray" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="cmt" value="/**&#10;* @description $desc$&#10;* @param $methodParameters$&#10;* @return $methodReturnType$&#10;* @author $user$&#10;* @time $date$ $time$&#10;*/" description="添加方法注释" toReformat="false" toShortenFQNames="true">
+    <variable name="desc" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="methodParameters" expression="methodParameters()" defaultValue="" alwaysStopAt="true" />
+    <variable name="methodReturnType" expression="methodReturnType()" defaultValue="" alwaysStopAt="true" />
+    <variable name="user" expression="user()" defaultValue="" alwaysStopAt="true" />
+    <variable name="date" expression="date()" defaultValue="" alwaysStopAt="true" />
+    <variable name="time" expression="time()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+</templateSet>
