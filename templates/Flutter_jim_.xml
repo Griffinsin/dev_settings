@@ -267,7 +267,7 @@
       <option name="DART" value="true" />
     </context>
   </template>
-  <template name="appbar" value="Scaffold(&#10;appBar: CommonAppBar(&#10;  title: S.current.l_id_30058,&#10;),&#10;backgroundColor: MessagesSetting.MESSAGES_BG,&#10;body: ScrollConfiguration(&#10;  behavior: NoShadowScrollBehavior(),&#10;  child: ProviderWidget&lt;MyNoticeRefrishListModel&gt;(&#10;      model: MyNoticeRefrishListModel(),&#10;      onModelReady: (model) {&#10;        model.refresh(init: true);&#10;      },&#10;      builder: (context, listModel, child) {&#10;        return _makeSmartRefresher(listModel);&#10;      }),&#10;));" description="带appbar的页面" toReformat="false" toShortenFQNames="true">
+  <template name="appbar" value="Scaffold(&#10;appBar: CommonAppBar(&#10;  title:  S.current.l_id_30058,&#10;),&#10;backgroundColor: MessagesSetting.MESSAGES_BG,&#10;body: ScrollConfiguration(&#10;  behavior: NoShadowScrollBehavior(),&#10;  child: ProviderWidget&lt;MyNoticeRefrishListModel&gt;(&#10;      model: MyNoticeRefrishListModel(),&#10;      onModelReady: (model) {&#10;        model.refresh(init: true);&#10;      },&#10;      builder: (context, listModel, child) {&#10;        return _makeSmartRefresher(listModel);&#10;      }),&#10;));" description="带appbar的页面" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="DART" value="true" />
     </context>
