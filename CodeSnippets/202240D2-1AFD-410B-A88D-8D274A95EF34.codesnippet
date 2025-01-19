@@ -12,7 +12,7 @@
 	<string>    //Build Phases中引入sqlite3.0.tbd
     NSString *path = [NSString stringWithFormat:@"%@/123343.db",[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]];
 
-    static sqlite3 *db;
+    static sqlite3 *db;  
     // 打开数据库
     if (sqlite3_open(path.UTF8String, &amp;db) == SQLITE_OK) {
         NSLog(@"打开成功");
