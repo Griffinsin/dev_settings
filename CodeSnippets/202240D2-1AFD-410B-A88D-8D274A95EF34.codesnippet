@@ -10,7 +10,7 @@
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>    //Build Phases中引入sqlite3.0.tbd
-    NSString *path = [NSString stringWithFormat:@"%@/123343.db",[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]];
+    NSString *path = [NSString stringWithFormat:@"%@/123343.db",[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]];   
 
     static sqlite3 *db;  
     // 打开数据库
