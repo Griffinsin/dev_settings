@@ -15,7 +15,7 @@
     static sqlite3 *db;  
     // 打开数据库
     if (sqlite3_open(path.UTF8String, &amp;db) == SQLITE_OK) {
-        NSLog(@"打开成功");
+        NSLog(@"打开成功");   
     }else{
         NSLog(@"打开失败");
     }
